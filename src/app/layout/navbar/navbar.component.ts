@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   isMenuCollapsed = true;
+  currentSize = 2;
 
   constructor() { }
 
@@ -16,5 +17,9 @@ export class NavbarComponent implements OnInit {
 
   toggleCollapse(): void {
     this.isMenuCollapsed = !this.isMenuCollapsed;
+  }
+
+  isCurrentSize(n: number): boolean {
+    return (n == this.currentSize);
   }
 }

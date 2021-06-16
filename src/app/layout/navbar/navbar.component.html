@@ -25,10 +25,28 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link tamannio">
+        <a class="nav-link tamannio" [ngbPopover]="popContent"
+          [popoverTitle]="popTitle">
           Tamaño <i class="fa fa-cog fa-fw"></i>
         </a>
       </li>
     </ul>
   </div>
 </nav>
+
+<ng-template #popTitle>
+  Tamaño de texto
+</ng-template>
+<ng-template #popContent>
+  <div class="d-flex">
+    <button type="button" class="btn btn-sm btn-primary mr-1" [ngClass]="{'active':isCurrentSize(1)}">
+      <i class="fas fa-font fa-fw"></i>
+    </button>
+    <button type="button" class="btn btn-primary mr-1" [ngClass]="{'active':isCurrentSize(2)}">
+      <i class="fas fa-font fa-fw"></i>
+    </button>
+    <button type="button" class="btn btn-lg btn-primary" [ngClass]="{'active':isCurrentSize(3)}">
+      <i class="fas fa-font fa-fw"></i>
+    </button>
+  </div>
+</ng-template>
