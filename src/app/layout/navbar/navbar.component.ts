@@ -1,3 +1,4 @@
+import { NumberService } from './../../shared/services/number.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,7 +11,9 @@ export class NavbarComponent implements OnInit {
   isMenuCollapsed = true;
   currentSize = 2;
 
-  constructor() { }
+  constructor(
+    private numberService: NumberService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -21,5 +24,10 @@ export class NavbarComponent implements OnInit {
 
   isCurrentSize(n: number): boolean {
     return (n == this.currentSize);
+  }
+
+  setNumber(n: number): void {
+    this.currentSize = n;
+    this.numberService.setNumber(n);
   }
 }

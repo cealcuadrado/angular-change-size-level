@@ -39,13 +39,13 @@
 </ng-template>
 <ng-template #popContent>
   <div class="d-flex">
-    <button type="button" class="btn btn-sm btn-primary mr-1" [ngClass]="{'active':isCurrentSize(1)}">
+    <button type="button" class="btn btn-sm btn-primary mr-1" (click)="setNumber(1)" [ngClass]="{'active':isCurrentSize(1)}">
       <i class="fas fa-font fa-fw"></i>
     </button>
-    <button type="button" class="btn btn-primary mr-1" [ngClass]="{'active':isCurrentSize(2)}">
+    <button type="button" class="btn btn-primary mr-1" (click)="setNumber(2)" [ngClass]="{'active':isCurrentSize(2)}">
       <i class="fas fa-font fa-fw"></i>
     </button>
-    <button type="button" class="btn btn-lg btn-primary" [ngClass]="{'active':isCurrentSize(3)}">
+    <button type="button" class="btn btn-lg btn-primary" (click)="setNumber(3)" [ngClass]="{'active':isCurrentSize(3)}">
       <i class="fas fa-font fa-fw"></i>
     </button>
   </div>

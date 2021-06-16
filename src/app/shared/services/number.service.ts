@@ -1,0 +1,19 @@
+import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class NumberService {
+  private subjectNum = new Subject<number>();
+
+  constructor() { }
+
+  public setNumber(n: number): void {
+    this.subjectNum.next(n);
+  }
+
+  public getNumber(): Observable<number> {
+    return this.subjectNum.asObservable();
+  }
+}
